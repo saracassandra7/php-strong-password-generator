@@ -1,7 +1,16 @@
 <?php
 
-$pswength = $_GET['psw_length'];
-var_dump($pswength)
+$pswlength = $_GET['psw_length'];
+var_dump($pswlength);
+
+function getRandomPassword($pswlength){
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?&%$<>^+-*/()[]{}@#_=';
+  $password = '';
+  for($i = 0; $i < $pswlength; $i++){
+    $password .= $characters[rand(0, $pswlength) -1];
+  }
+  echo $password;
+};
 
 ?>
 
@@ -32,6 +41,11 @@ var_dump($pswength)
         <button type="submit" class="btn btn-info">Genera</button>
         </div>
       </div>
+
+      <h3>La password generata è: <?php 
+      if(!empty($_GET['psw_length'])){
+        getRandomPassword($pswlength);
+      } ?></h3>
   
     </form>
   </div>
