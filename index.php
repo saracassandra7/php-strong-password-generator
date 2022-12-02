@@ -1,3 +1,10 @@
+<?php
+
+$pswength = $_GET['psw_length'];
+var_dump($pswength)
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +24,7 @@
       <div class="row">
         <div class="col-4">
          <label for="input" class="form-label">Inserisci la lunghezza della password da generare</label>
-         <input type="number" class="form-control">
+         <input type="number" class="form-control" name="psw_length">
         </div>
       </div>
       <div class="row mt-3">
